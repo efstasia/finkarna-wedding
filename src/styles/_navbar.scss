@@ -1,25 +1,37 @@
 .navbar {
-  background-color: #310303;
-  margin-bottom: 50px;
+  background-color: #f5eee6a8;
+
+  nav {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
 
   &__list {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 23px;
     margin: 0;
-    padding: 30px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    padding: 10px;
     flex-flow: row wrap;
+    max-width: 1230px;
+    margin-inline: auto;
 
     li {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
       letter-spacing: 1.2px;
       transition: all .3s ease-in-out;
 
+      img {
+        height: 70px;
+        width: auto;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid  rgb(142, 88, 124);
+      }
+
       a {
-        color: #e4b1ab;
+        color: rgb(142, 88, 124);
         transition: all .3s ease-in-out;
         font-family: "Bebas Neue", sans-serif;
         font-weight: 400;
@@ -30,6 +42,7 @@
         transform: scale(1.04);
         a {
           color: #f9dbbd;
+          color: rgb(92, 121, 68);
         }
       }
     

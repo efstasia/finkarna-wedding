@@ -7,7 +7,7 @@ import { Home } from 'pages/Home';
 import { Rhymes } from 'pages/Rhymes';
 import { Navbar } from 'components/Navbar';
 import { Score } from 'pages/Score';
-import bgImage from './images/christmas-bcg1.png'
+import bgImage from './images/flowers.png'
 import { TeamPicker } from 'pages/TeamPicker';
 import { Footer } from 'components/Footer';
 import { BonusPoints } from 'pages/BonusPoints';

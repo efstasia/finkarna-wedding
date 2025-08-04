@@ -13,14 +13,12 @@ export const Calendar = () => {
 
   const adventCalendarData = [
     { id: 1, christmas: false, title: '1' },
-    { id: 5, christmas: false, title: '5' },
-    { id: 8, christmas: false, title: '8' },
-    { id: 7, christmas: false, title: '7' },
-    { id: 6, christmas: false, title: '6' },
-    { id: 4, christmas: false, title: '4' },
-    { id: 9, christmas: true, title: '9' },
-    { id: 3, christmas: false, title: '3' },
     { id: 2, christmas: false, title: '2' },
+    { id: 3, christmas: false, title: '3' },
+    { id: 4, christmas: false, title: '4' },
+    { id: 5, christmas: false, title: '5' },
+    { id: 6, christmas: false, title: '6' },
+    { id: 7, christmas: true, title: '7' },
   ];
 
 const handleCardClick = (id) => {
@@ -81,8 +79,8 @@ const fetchDoorStatus = async (id) => {
 
   return (
     <div className='calendar'>
-      <Sparkles flicker={false} minSize={12} count={100} />
-      <div className='calendar-grid pink-background'>
+      <Sparkles flicker={false} minSize={12} count={100} color={["#d3a980", "#F5EEE6", "#8e587c8e", "#3d845d"]}/>
+      <div className='calendar-grid'>
         {adventCalendarData.map(event => (
           <div
             key={event.id}
@@ -92,12 +90,11 @@ const fetchDoorStatus = async (id) => {
             <div className='calendar__item--front'>
               <p className='calendar__item--front-title'>{event.title}</p>
             </div>
-            <div className='calendar__item--back' style={{backgroundImage: `url(${backgroundImage})`}}>
+            <div className='calendar__item--back'>
               <div className='calendar__item__back-content'>
                 {apiData[event.id]?.content?.tomorrow && (
-                  <p>Idag: {apiData[event.id] ? apiData[event.id].content.tomorrow : ''}</p>
+                  <p>{apiData[event.id] ? apiData[event.id].content.tomorrow : ''}</p>
                 )} 
-                <p>Bonus: {apiData[event.id] ? apiData[event.id].content.now : ''}</p>
               </div>
             </div>
           </div>

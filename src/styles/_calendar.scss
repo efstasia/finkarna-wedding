@@ -5,36 +5,41 @@ h1 {
 }
 
 .calendar {
+  margin-top: 50px;
   &-grid {
     margin: auto;
     width: fit-content;
     gap: 20px;
     position: relative;
-    display: flex;
-    flex-flow: row wrap;
     max-width: 874px !important;
     justify-content: center;
+    background-color: #8e587c8e;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    border-radius: 10px;
   }
 
   &__item {
     border-radius: 10px;
-    background-color: #142318;
+    background-color: #458055;
+    background-color: #F5EEE6;
     font-family: "Kanit", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-size: 100px;
-    color: #f9dbbd;
+    color: #d3a980;
+    // color: rgb(142, 88, 124);
     cursor: pointer;
     transition: all .2s linear;
     transform-style: preserve-3d;
     transition: transform 0.5s;
     perspective: 1000px;
     position: relative;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     transition: all .6s ease-in-out;
     border-style: solid; 
-    border-image: url('../images/border-5.png') 68 / 94px stretch;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
@@ -62,6 +67,10 @@ h1 {
     &.christmas {
       font-weight: bold;
       background-color: #310303;
+      grid-column: span 3;
+      width: 100%;
+      color: #F5EEE6;
+      background-color: #ebccad;
     }
 
     &--front {
@@ -83,7 +92,8 @@ h1 {
     }
 
     &--back {
-      background-color: #053d28;
+      background-color: #3d845d;
+      background-color: rgb(133, 147, 123);
       width: 100%;
       height: 100%;
       position: absolute;
@@ -111,6 +121,7 @@ h1 {
         font-size: 24px;
         margin-bottom: 10px;
         font-weight: 400;
+        color: #F5EEE6;
       }
     }
   }

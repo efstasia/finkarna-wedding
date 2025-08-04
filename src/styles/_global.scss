@@ -2,16 +2,14 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Kanit", sans-serif;
-  background-color: #e4b1ab;
-  cursor: url('../images/bow2.png'), auto;
+  background-color: #F5EEE6;
   overflow-x: hidden;
 }
 
 main {
-  min-height: 100vh;
+  min-height: calc(100vh - 66px);
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 50px;
 }
 
 .pink-background, .red-background  {
