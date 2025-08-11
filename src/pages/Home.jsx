@@ -1,14 +1,9 @@
 /* eslint-disable */
-import { EasterEgg } from "../components/EasterEgg";
-import React, { useEffect, useState } from "react";
-import Confetti from 'react-confetti'
-
-
+import React from "react";
+import { Link } from 'react-router-dom';
 
 
 export const Home = () => {
- 
-
   return (
     <div className="homepage">
       <p>Snart er speciella dag kommen är, en dag ni föralltid kommer hålla kär.
@@ -23,9 +18,11 @@ export const Home = () => {
         <br></br>
         Så länge leve kärlekens glöd, snart står ni där och lovar att älska varandra i lust och nöd.
       </p>
+      <Link to="/calendar">
       <div className="heart">
-
+        <span>Klicka på mig</span>
       </div>
+      </Link>
     </div>
   )
 }

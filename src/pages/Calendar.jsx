@@ -12,13 +12,12 @@ export const Calendar = () => {
 
 
   const adventCalendarData = [
-    { id: 1, christmas: false, title: '1' },
-    { id: 2, christmas: false, title: '2' },
-    { id: 3, christmas: false, title: '3' },
-    { id: 4, christmas: false, title: '4' },
-    { id: 5, christmas: false, title: '5' },
-    { id: 6, christmas: false, title: '6' },
-    { id: 7, christmas: true, title: '7' },
+    { id: 1, wedding: false, title: '1' },
+    { id: 2, wedding: false, title: '2' },
+    { id: 3, wedding: false, title: '3' },
+    { id: 4, wedding: false, title: '4' },
+    { id: 5, wedding: false, title: '5' },
+    { id: 6, wedding: true, title: '6' },
   ];
 
 const handleCardClick = (id) => {
@@ -92,8 +91,8 @@ const fetchDoorStatus = async (id) => {
             </div>
             <div className='calendar__item--back'>
               <div className='calendar__item__back-content'>
-                {apiData[event.id]?.content?.tomorrow && (
-                  <p>{apiData[event.id] ? apiData[event.id].content.tomorrow : ''}</p>
+                {apiData[event.id]?.content && (
+                  <p>{apiData[event.id] ? apiData[event.id].content : ''}</p>
                 )} 
               </div>
             </div>

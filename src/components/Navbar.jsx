@@ -11,7 +11,6 @@ export const Navbar = () => {
 
 				<ul className='navbar__list'>
 					<li><Link to="/">      <img src={finches} alt="" /></Link></li>
-					<li><Link to="/calendar">Kalender</Link></li>
 				</ul>
 			</nav>
 		</div>
