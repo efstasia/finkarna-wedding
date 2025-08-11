@@ -84,7 +84,7 @@ const fetchDoorStatus = async (id) => {
           <div
             key={event.id}
             onClick={() => handleCardClick(event.id)}
-            className={`calendar__item ${event.christmas ? 'christmas' : ''} ${flippedCards[event.id] ? 'flipped' : ''}`}
+            className={`calendar__item ${event.wedding ? 'wedding' : ''} ${flippedCards[event.id] ? 'flipped' : ''}`}
           >
             <div className='calendar__item--front'>
               <p className='calendar__item--front-title'>{event.title}</p>
