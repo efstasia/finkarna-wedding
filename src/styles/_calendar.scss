@@ -14,8 +14,8 @@ h1 {
     max-width: 874px !important;
     justify-content: center;
     background-color: #8e587c8e;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     border-radius: 10px;
   }

@@ -1,7 +1,7 @@
 .homepage {
   display: grid;
   place-items: center;
-  height: calc(100vh - 100px);
+  // height: calc(100vh - 100px);
   color: #F5EEE6;
 
   .heart {
@@ -17,10 +17,16 @@
     animation: beat 1.2s infinite alternate;
     display: grid;
     place-items: center;
+    margin-block: 100px;
 
     span {
       color: #F5EEE6;
     }
+  }
+
+  &__rhyme {
+    margin-top: 100px;
+    margin-inline: 10px;
   }
 
   p {

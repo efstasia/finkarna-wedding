@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 export const Home = () => {
   return (
     <div className="homepage">
+      <div className="homepage__rhyme">
+
+
       <p>Snart er speciella dag kommen är, en dag ni föralltid kommer hålla kär.
         <br></br>
         Vi är så glada att av denna dag få vara en del, att se två halvor mötas och tillsammans göra cirkeln hel.
@@ -18,6 +21,7 @@ export const Home = () => {
         <br></br>
         Så länge leve kärlekens glöd, snart står ni där och lovar att älska varandra i lust och nöd.
       </p>
+      </div>
       <Link to="/calendar">
       <div className="heart">
         <span>Klicka på mig</span>
