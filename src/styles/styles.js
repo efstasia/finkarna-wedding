@@ -7,3 +7,4 @@ import './_homepage.scss';
 import './_team-picker.scss';
 import './_footer.scss';
 import './_bonus-points.scss';
+import './_popup.scss';

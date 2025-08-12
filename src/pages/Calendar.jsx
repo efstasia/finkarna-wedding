@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { Popup } from 'components/Popup';
 import React, { useEffect, useState } from 'react';
 import Sparkles from 'react-sparkle';
 import backgroundImage from '../images/card-background.png'
@@ -7,9 +8,10 @@ export const Calendar = () => {
   const [flippedCards, setFlippedCards] = useState({});
   const [apiData, setApiData] = useState({});
   const [statusData, setStatusData] = useState([]);
+  const [openPopupId, setOpenPopupId] = useState(null);
+
 
   const apiUrl = process.env.REACT_APP_API_URL || 'https://jonathan.inte.fuska.qtkul.lol/api/v1'
-
 
   const adventCalendarData = [
     { id: 1, wedding: false, title: '1' },
@@ -35,6 +37,7 @@ const handleCardClick = (id) => {
 		...prev,
 		[id]: true, // Flip the current card.
 	}));
+  setOpenPopupId(id);
 
 };
 
@@ -84,21 +87,42 @@ const fetchDoorStatus = async (id) => {
           <div
             key={event.id}
             onClick={() => handleCardClick(event.id)}
-            className={`calendar__item ${event.wedding ? 'wedding' : ''} ${flippedCards[event.id] ? 'flipped' : ''}`}
+            className={`calendar__item ${event.wedding ? 'wedding' : ''}`}
           >
             <div className='calendar__item--front'>
               <p className='calendar__item--front-title'>{event.title}</p>
             </div>
-            <div className='calendar__item--back'>
+            {/* <div className='calendar__item--back'>
               <div className='calendar__item__back-content'>
-                {apiData[event.id]?.content && (
-                  <p>{apiData[event.id] ? apiData[event.id].content : ''}</p>
+                {apiData[event.id]?.content && 
+                (
+                  <Popup trigger={<button> Trigger</button>} position="right center">
+                    <p>{apiData[event.id] ? apiData[event.id].content : ''}</p>
+                  </Popup>
                 )} 
               </div>
-            </div>
+            </div> */}
+
           </div>
         ))}
       </div>
+<Popup 
+        isOpen={openPopupId !== null} 
+        onClose={() => setOpenPopupId(null)}
+      >
+        <h2>{apiData[openPopupId]?.title}</h2>
+        {openPopupId === 2 ? 
+          <a 
+          href={apiData[openPopupId]?.content} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+         Klicka på mig för att komma till toner av kärlek
+        </a>
+        :
+        <p>{apiData[openPopupId]?.content || "Hämtar innehåll..."}</p>
+      }
+      </Popup>
     </div>
   );
 };
