@@ -2,7 +2,7 @@
 import { Popup } from 'components/Popup';
 import React, { useEffect, useState } from 'react';
 import Sparkles from 'react-sparkle';
-import backgroundImage from '../images/card-background.png'
+import backImage from '../images/finkar.png'
 
 export const Calendar = () => {
   const [flippedCards, setFlippedCards] = useState({});
@@ -37,7 +37,10 @@ const handleCardClick = (id) => {
 		...prev,
 		[id]: true, // Flip the current card.
 	}));
-  setOpenPopupId(id);
+
+  setTimeout(() => {
+    setOpenPopupId(id);
+  }, 700);
 
 };
 
@@ -81,43 +84,38 @@ const fetchDoorStatus = async (id) => {
 
   return (
     <div className='calendar'>
-      <Sparkles flicker={false} minSize={12} count={100} color={["#d3a980", "#F5EEE6", "#8e587c8e", "#3d845d"]}/>
+      <Sparkles flicker={false} minSize={12} count={100} color={["#d3a980", "#F5EEE6", "#8e587c8e", "#3d845d"]} flickerSpeed={'slower'} />
       <div className='calendar-grid'>
         {adventCalendarData.map(event => (
           <div
             key={event.id}
             onClick={() => handleCardClick(event.id)}
-            className={`calendar__item ${event.wedding ? 'wedding' : ''}`}
+            className={`calendar__item ${event.wedding ? 'wedding' : ''} ${flippedCards[event.id] ? 'flipped' : ''}`}
           >
             <div className='calendar__item--front'>
               <p className='calendar__item--front-title'>{event.title}</p>
             </div>
-            {/* <div className='calendar__item--back'>
+            <div className='calendar__item--back'>
               <div className='calendar__item__back-content'>
-                {apiData[event.id]?.content && 
-                (
-                  <Popup trigger={<button> Trigger</button>} position="right center">
-                    <p>{apiData[event.id] ? apiData[event.id].content : ''}</p>
-                  </Popup>
-                )} 
+                <img src={backImage} alt="" />
               </div>
-            </div> */}
+            </div>
 
           </div>
         ))}
       </div>
-<Popup 
+      <Popup 
         isOpen={openPopupId !== null} 
         onClose={() => setOpenPopupId(null)}
       >
-        <h2>{apiData[openPopupId]?.title}</h2>
+        <h2 className='calendar__item--back-title'>{apiData[openPopupId]?.title}</h2>
         {openPopupId === 2 ? 
           <a 
           href={apiData[openPopupId]?.content} 
           target="_blank" 
           rel="noopener noreferrer"
         >
-         Klicka på mig för att komma till toner av kärlek
+          Klicka på mig för att komma till toner av kärlek
         </a>
         :
         <p>{apiData[openPopupId]?.content || "Hämtar innehåll..."}</p>

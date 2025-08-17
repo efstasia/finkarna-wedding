@@ -6,12 +6,14 @@ h1 {
 
 .calendar {
   margin-top: 50px;
+  position: relative;
+
   &-grid {
     margin: auto;
     width: fit-content;
     gap: 20px;
     position: relative;
-    max-width: 874px !important;
+    max-width: 660px !important;
     justify-content: center;
     background-color: #8e587c8e;
     display: flex;
@@ -29,7 +31,6 @@ h1 {
     font-style: normal;
     font-size: 100px;
     color: #d3a980;
-    // color: rgb(142, 88, 124);
     cursor: pointer;
     transition: all .2s linear;
     transform-style: preserve-3d;
@@ -39,7 +40,7 @@ h1 {
     height: 200px;
     width: 200px;
     transition: all .6s ease-in-out;
-    border-style: solid; 
+    border: 2px solid  #d3a980;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
@@ -66,9 +67,9 @@ h1 {
 
     &.wedding {
       font-weight: bold;
-      background-color: #310303;
+      background-color: #d3a980;
       color: #F5EEE6;
-      background-color: #ebccad;
+      border-color: #F5EEE6;
     }
 
     &--front {
@@ -90,8 +91,8 @@ h1 {
     }
 
     &--back {
-      background-color: #3d845d;
-      background-color: rgb(133, 147, 123);
+      background-color: #d3a980;
+      color: #F5EEE6;
       width: 100%;
       height: 100%;
       position: absolute;
@@ -100,6 +101,14 @@ h1 {
       top: 0;
       border-radius: 10px;
       font-size: 30px;
+
+      img {
+        border-radius: 50%;
+      }
+
+      &-title {
+        color: #d3a980;
+      }
     }
 
     &--disabled {
